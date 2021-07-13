@@ -9,19 +9,28 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class ParentClassTablePerClass {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
-	protected Long id;
+	protected int id;
 
 	@Column
 	protected String name;
+
+	public ParentClassTablePerClass(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+	
+	
 
 }
