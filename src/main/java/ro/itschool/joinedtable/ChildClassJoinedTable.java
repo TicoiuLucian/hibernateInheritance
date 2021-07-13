@@ -5,11 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @PrimaryKeyJoinColumn(name = "Parent_Id")
 public class ChildClassJoinedTable extends ParentClassJoinedTable {
 
